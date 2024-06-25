@@ -58,15 +58,14 @@ public class WordCounterApp extends JFrame {
         textArea = new JTextArea(10, 30);
         countButton = new JButton("Count Words");
 
-        // Set layout manager
+      
         setLayout(new BorderLayout());
 
-        // Add components to the frame
+        
         add(label, BorderLayout.NORTH);
         add(new JScrollPane(textArea), BorderLayout.CENTER);
         add(countButton, BorderLayout.SOUTH);
 
-        // Add action listener to countButton
         countButton.addActionListener((var e) -> {
             String text = textArea.getText();
             int wordCount = countWords(text);
@@ -74,10 +73,10 @@ public class WordCounterApp extends JFrame {
                     "Number of words: " + wordCount);
         });
 
-        // Set frame properties
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
-        setLocationRelativeTo(null); // Center the frame
+        setLocationRelativeTo(null); 
         setVisible(true);
     }
 
@@ -95,14 +94,12 @@ public class WordCounterApp extends JFrame {
         if (trimmedText.isEmpty()) {
             return 0;
         }
-        // Split the text by whitespace
+        
         String[] words = trimmedText.split("\\s+");
         return words.length;
     }
 
-    /**
-     * @param args
-     */
+  
     public static void main(String[] args) {
         SwingUtilities.invokeLater(WordCounterApp::new);
     }
